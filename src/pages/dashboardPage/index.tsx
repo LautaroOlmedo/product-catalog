@@ -48,7 +48,6 @@ export const DashboardPage: React.FC = () => {
   return (
     <Container maxWidth="xl" sx={{ mt: 4 }}>
       <Grid container spacing={4}>
-        {/* Products Dashboard */}
         <Grid item xs={12}>
           <Typography variant="h5" sx={{ mb: 2 }}>
             Products
@@ -87,7 +86,6 @@ export const DashboardPage: React.FC = () => {
           </TableContainer>
         </Grid>
 
-        {/* Orders Dashboard */}
         <Grid item xs={12}>
           <Typography variant="h5" sx={{ mb: 2 }}>
             Orders
