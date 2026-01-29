@@ -1,4 +1,4 @@
-# Product Catalog – Frontend (React)
+# Product Catalog – Frontend
 This project is a React Single Page Application (SPA) containerized with Docker and served using Nginx.
 It is configured to properly support client-side routing (React Router) and production-ready static asset caching.
 **Tech Stack**
