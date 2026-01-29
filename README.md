@@ -39,18 +39,18 @@ COPY nginx.conf /etc/nginx/conf.d/default.conf
 
 COPY --from=build /app/build /usr/share/nginx/html
 
-* Build Stage (node:20)
+Build Stage (node:20)
 
 Installs dependencies using npm install
 
 Builds the production-ready React app using npm run build
 
 Outputs static files into the /build directory
-🔹 Runtime Stage (nginx:alpine)
+ Runtime Stage (nginx:alpine)
 Uses Nginx to serve static files
 Copies a custom nginx.conf
 Serves the React build from /usr/share/nginx/html
-🌐 Nginx Configuration (SPA Support)
+Nginx Configuration (SPA Support)
 The nginx.conf file is required to properly handle React Router routes.
 server {
     listen 80;
@@ -90,7 +90,7 @@ Allows direct navigation to routes like:
 Prevents Nginx from returning 404 on client-side routes
 Caches static assets efficiently
 Ensures new deployments always load the latest version
-⚙️ Environment Variables
+Environment Variables
 API base URLs are configured using environment variables.
 Create a .env file in the project root:
 REACT_APP_PRODUCTS_URL=http://localhost:8080/api/products
