@@ -10,26 +10,26 @@ import {
 } from "@mui/material";
 
 type CardProps = {
-    image: string;
     name: string
-    species: string
-    status: string
+    description: string;
+    price: number
+    stock: number
 }
 
-export const CardComponent: React.FC<CardProps> = ({image, name, species, status}) => {
+export const CardComponent: React.FC<CardProps> = ({name, description, price, stock}) => {
     return (
         <Card >
             <CardMedia
                 component="img"
                 height="194"
-                image={image}
+                //image={image}
                 alt="Paella dish"
             />
             <CardContent>
                 <Typography variant="h4" sx={{ mb: 1.5 }}>{name}</Typography>
                 <Divider />
-                <Typography sx={{ mt: 1.5 }}>Especie: {species}</Typography>
-                <Typography sx={{ mt: 1.5 }}>Estado: {status}</Typography>
+                <Typography sx={{ mt: 1.5 }}>Price: {price}</Typography>
+                <Typography sx={{ mt: 1.5 }}>Stock: {stock}</Typography>
             </CardContent>
             <CardActions>
                 <Button fullWidth variant="contained" size="small">Learn More</Button>

@@ -1,15 +1,16 @@
 import React from "react";
 import { Box, Button, Container, Grid } from "@mui/material";
 import { CardComponent, HeaderComponent } from "../../components";
-import { characters } from "../../api/characters";
-import { TypeCharacter } from "./interface/character.interface";
+
+import { products } from "../../api/products";
+import { TypeProduct } from "./interface/product.interface";
 
 export const HomePage: React.FC<{}> = () => {
-  const [allCharacters, setAllCharacters] = React.useState<TypeCharacter[] | null>(null)
+  const [allProducts, setAllProducts] = React.useState<TypeProduct[] | null>(null)
 
   React.useEffect(() => {
-    characters.getAll({ page: 1 }).then((r) => {
-      setAllCharacters(r.data.results)
+    products.getAll({ limit: 10 }).then((r) => {
+      setAllProducts(r.data)
     }).catch((e) => {
       console.error(e)
     })
@@ -22,23 +23,24 @@ export const HomePage: React.FC<{}> = () => {
         description="Hola mundo bienvenido a Codrr"
         element={
           <Button fullWidth variant="contained">
-            Hola mundo
+            Welcome
           </Button>
         }
       />
       <div>
         {
-          allCharacters?.length !== 0 ? (
+          allProducts?.length !== 0 ? (
             <Grid container spacing={2} direction="row">
-              {allCharacters!.map((character) => (
+              {allProducts!.map((product) => (
                 <Grid item xs={3}>
-                  <CardComponent key={character.id} image={character.image} name={character.name} species={character.species} status={character.status} />
+                  <CardComponent key={product.id} name={product.name} description={product.description} price={product.price} stock={product.stock} />
                 </Grid>
               ))}
             </Grid>
           ) : ""
         }
       </div>
+     
     </Container>
   );
 };
