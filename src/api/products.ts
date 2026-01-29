@@ -1,26 +1,28 @@
-
-
 import { productInstance } from "./base.api";
+import { TypeProduct } from "../pages/home/interface/product.interface";
 
-const endpoint = "character";
+interface GetAllProductsParams {
+  limit?: number;
+}
 
 export const products = {
-    getAll: function ({ limit = 10 }: { limit?: number }) {
-        return productInstance.get(endpoint, {
-            params: {
-                limit
-            }
-            
-        })
-    },
-    getById: function ({ id }: { id: number }) {
-        return productInstance.get(`/${id}`)
-    },
-    update:  function ({ id }: { id: number }) { // -> Send body 
-        return productInstance.put(`/${id}`)
-    },
-    delete:  function ({ id }: { id: number }) {
-        return productInstance.delete(`/${id}`)
-    },
-    
-}
+  getAll: (params?: GetAllProductsParams) => {
+    return productInstance.get<TypeProduct[]>("", {
+      params,
+    });
+  },
+
+  getById: function({id}: {id: string | undefined}){
+    return productInstance.get<TypeProduct>(`/${id}`);
+  },
+  
+
+
+  update: (id: string, data: Partial<TypeProduct>) => {
+    return productInstance.put(`/${id}`, data);
+  },
+
+  delete: (id: string) => {
+    return productInstance.delete(`/${id}`);
+  },
+};

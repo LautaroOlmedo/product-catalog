@@ -13,6 +13,7 @@ import { useNavigate } from "react-router-dom";
 
 export const NavBar: React.FC<{}> = () => {
   const navigate = useNavigate();
+
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="sticky">
@@ -25,14 +26,31 @@ export const NavBar: React.FC<{}> = () => {
               alignItems="center"
             >
               <Grid item>
-                <Typography>Codrr</Typography>
+                <Typography variant="h6" sx={{ fontWeight: 'bold' }}>
+                  Codrr
+                </Typography>
               </Grid>
+
               <Grid item>
                 <Stack direction="row" spacing={2}>
-                  <Button variant="contained" onClick={() => navigate("login")}>
-                    Login
+                  <Button
+                    variant="contained"
+                    onClick={() => navigate("/")}
+                  >
+                    Home
                   </Button>
-                  <Button variant="outlined">Register</Button>
+                  <Button
+                    variant="contained"
+                    onClick={() => navigate("/products")}
+                  >
+                    Products
+                  </Button>
+                  <Button
+                    variant="contained"
+                    onClick={() => navigate("/orders")}
+                  >
+                    Orders
+                  </Button>
                 </Stack>
               </Grid>
             </Grid>
