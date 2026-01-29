@@ -27,7 +27,7 @@ export const NavBar: React.FC<{}> = () => {
             >
               <Grid item>
                 <Typography variant="h6" sx={{ fontWeight: 'bold' }}>
-                  Codrr
+                  Product Catalog
                 </Typography>
               </Grid>
 
@@ -37,20 +37,9 @@ export const NavBar: React.FC<{}> = () => {
                     variant="contained"
                     onClick={() => navigate("/")}
                   >
-                    Home
+                    Dashboard
                   </Button>
-                  <Button
-                    variant="contained"
-                    onClick={() => navigate("/products")}
-                  >
-                    Products
-                  </Button>
-                  <Button
-                    variant="contained"
-                    onClick={() => navigate("/orders")}
-                  >
-                    Orders
-                  </Button>
+              
                 </Stack>
               </Grid>
             </Grid>

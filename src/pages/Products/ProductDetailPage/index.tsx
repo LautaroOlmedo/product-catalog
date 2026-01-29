@@ -11,9 +11,9 @@ import {
 } from '@mui/material';
 import React from 'react';
 import { useParams } from 'react-router-dom';
-import { products } from '../../api/products';
-import { IProduct } from './interfaces/product.interface';
-import { ProductPurchaseMenu } from '../../components/ProductPurchaseMenu';
+import { products } from '../../../api/products';
+import { IProduct } from '../interfaces/product.interface';
+import { ProductPurchaseMenu } from '../../../components/ProductPurchaseMenu';
 
 
 const ProductDetailPage: React.FC = () => {
@@ -152,4 +152,3 @@ const ProductDetailPage: React.FC = () => {
 };
 
 export default ProductDetailPage;
-

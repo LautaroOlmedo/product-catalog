@@ -1,23 +1,19 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
-import { HomePage } from "./pages/home";
 import { RouterLayout } from "./common/RouterLayout";
-import ProductDetailPage from "./pages/Products/ProductDetailPage";
+import ProductDetailPage from "./pages/products/ProductDetailPage";
 import { ProductPurchaseMenu } from "./components/ProductPurchaseMenu";
-import { OrdersPage } from "./pages/Order";
-import { ProductsPage } from "./pages/Products";
+import { DashboardPage } from "./pages/dashboardPage";
+import { NotFoundPage } from "./pages/notFound";
 
-export const AppRouter: React.FC<{}> = () => {
+export const AppRouter: React.FC = () => {
   return (
     <Routes>
       <Route path="/" element={<RouterLayout />}>
-       <Route path="/" element={<HomePage />} />
-        <Route path="/products" element={<ProductsPage />} />
-        <Route path="/products/:id" element={<ProductDetailPage/>} />
-        <Route path="/orders" element={<OrdersPage/>} />
+        <Route index element={<DashboardPage />} />
+        <Route path="products/:id" element={<ProductDetailPage />} />
+        <Route path="*" element={<NotFoundPage />} /> 
       </Route>
-     
     </Routes>
   );
 };
-

@@ -10,5 +10,3 @@ export interface IOrder{
     total: string
     created_at: string
 }
-
-

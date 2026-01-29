@@ -1,7 +1,8 @@
 import axios from "axios";
 
-const BASE_PRODUCTS_URL = "http://localhost:8080/api/products";
-const BASE_ORDERS_URL = "http://localhost:8080/api/orders";
+const BASE_PRODUCTS_URL = process.env.REACT_APP_PRODUCTS_URL || "http://localhost:8080/api/products";
+const BASE_ORDERS_URL = process.env.REACT_APP_ORDERS_URL || "http://localhost:8080/api/orders";
+
 
 export const productInstance = axios.create({
   baseURL: BASE_PRODUCTS_URL,

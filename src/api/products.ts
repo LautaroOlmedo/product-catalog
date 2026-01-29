@@ -1,5 +1,5 @@
 import { productInstance } from "./base.api";
-import { TypeProduct } from "../pages/home/interface/product.interface";
+import { TypeProduct } from "./interfaces/product.interface";
 
 interface GetAllProductsParams {
   limit?: number;

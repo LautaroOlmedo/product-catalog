@@ -5,4 +5,6 @@ export interface IProduct{
     description: string;
     price: number;
     stock: number;
-}
+} 
+
+
